@@ -19,3 +19,7 @@ $ cd wanted-pre-onboarding-frontend
 $ yarn install
 $ yarn start
 ```
+
+## Deployment
+
+https://contentlee.github.io/
