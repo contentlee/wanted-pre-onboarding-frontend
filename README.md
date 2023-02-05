@@ -1,5 +1,11 @@
 # 시작가이드
 
+## Requirements
+
+For building and running the app you need:
+
+- Node.js 18.12.1
+
 ## Installation
 
 ```sh
