@@ -44,7 +44,6 @@ const SignUpContainer = () => {
         password: pwd,
       })
       .then(() => {
-        console.log("Success SignUp");
         navigate("/signin");
       })
       .catch((error) => {

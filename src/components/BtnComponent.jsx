@@ -19,10 +19,7 @@ const Button = styled.button`
 
   &:disabled {
     cursor: default;
-    background-color: yellow;
-
-    &:hovoer {
-    }
+    background-color: gray;
   }
 `;
 
