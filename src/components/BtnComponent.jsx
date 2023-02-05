@@ -1,19 +1,20 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-  width: 80px;
-  height: 20px;
+  width: ${(props) => props.style.width};
+  height: 24px;
+  margin: 5px;
 
-  border: 1px solid black;
+  color: #fff;
+  font-weight: 600;
+
+  border: 1px solid ${(props) => props.style.background_color};
   border-radius: 4px;
-  background-color: white;
+  background-color: ${(props) => props.style.background_color};
 
   &:hover {
     cursor: pointer;
-
-    background-color: red;
-    color: white;
-    border-color: red;
+    filter: grayscale(40%);
   }
 
   &:disabled {
@@ -27,10 +28,11 @@ const Button = styled.button`
 
 const BtnComponent = ({
   props: { test_id = "", name = "확인", type = "", disabled = false, fn = () => {} },
-  style = {},
+  style = { background_color: "#5a5b7c", width: "80px" },
 }) => {
   return (
     <Button
+      style={style}
       data-testid={test_id}
       type={type}
       disabled={disabled}

@@ -81,16 +81,16 @@ const TodoElementContainer = ({ item: { id, todo, isCompleted } }) => {
       </CheckboxComponent>
 
       {mode === "basic" && (
-        <>
+        <div>
           <BtnComponent props={{ test_id: "modify-button", name: "수정", fn: handleModifyModeOnClick }} />
           <BtnComponent props={{ test_id: "delete-button", name: "삭제", fn: handleDeleteOnSubmit }} />
-        </>
+        </div>
       )}
       {mode === "modify" && (
-        <>
+        <div>
           <BtnComponent props={{ test_id: "submit-button", name: "제출", fn: handleEditOnSubmit }} />
           <BtnComponent props={{ test_id: "cancel-button", name: "취소", fn: handleBasicModeOnClick }} />
-        </>
+        </div>
       )}
     </li>
   );

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { https } from "../../lib/https";
 
-import { BtnComponent, InputComponent } from "../../components";
+import { BtnComponent, InputComponent, SignFormComponent } from "../../components";
 import { SignInContext } from "../../contexts/MainContext";
 
 const SignInContainer = () => {
@@ -34,12 +34,14 @@ const SignInContainer = () => {
   };
 
   return (
-    <form onSubmit={handleFormOnSubmit}>
+    <SignFormComponent props={{ fn: handleFormOnSubmit }}>
       <InputComponent props={{ test_id: "email-input", type: "email", placeholder: "E-mail" }} />
       <InputComponent props={{ test_id: "password-input", type: "password", placeholder: "Password" }} />
-      <BtnComponent props={{ test_id: "signin-button", name: "로그인", type: "submit" }} />
-      <BtnComponent props={{ test_id: "signup-button", name: "회원가입", fn: handleSignUpOnClick }} />
-    </form>
+      <div>
+        <BtnComponent props={{ test_id: "signin-button", name: "로그인", type: "submit" }} />
+        <BtnComponent props={{ test_id: "signup-button", name: "회원가입", fn: handleSignUpOnClick }} />
+      </div>
+    </SignFormComponent>
   );
 };
 

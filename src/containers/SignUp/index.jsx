@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { https } from "../../lib/https";
 
-import { BtnComponent, InputComponent } from "../../components";
+import { BtnComponent, InputComponent, SignFormComponent } from "../../components";
 
 const SignUpContainer = () => {
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ const SignUpContainer = () => {
   };
 
   return (
-    <form onSubmit={handleFormOnSubmit}>
+    <SignFormComponent props={{ fn: handleFormOnSubmit }}>
       <InputComponent
         props={{ test_id: "email-input", type: "email", placeholder: "E-mail", fn: handleEmailOnChange }}
       />
@@ -65,10 +65,13 @@ const SignUpContainer = () => {
           fn: handlePwdOnChange,
         }}
       />
-
-      <BtnComponent props={{ test_id: "signup-button", name: "회원가입", type: "submit", disabled: !(email && pwd) }} />
-      <BtnComponent props={{ name: "돌아가기", fn: handleBackOnClick }} />
-    </form>
+      <div>
+        <BtnComponent
+          props={{ test_id: "signup-button", name: "회원가입", type: "submit", disabled: !(email && pwd) }}
+        />
+        <BtnComponent props={{ name: "돌아가기", fn: handleBackOnClick }} />
+      </div>
+    </SignFormComponent>
   );
 };
 

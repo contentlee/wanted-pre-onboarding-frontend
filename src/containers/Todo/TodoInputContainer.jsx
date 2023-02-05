@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { https } from "../../lib/https";
 
-import { BtnComponent, InputComponent } from "../../components";
+import { BtnComponent, InputComponent, SignFormComponent } from "../../components";
 import { TodoListContext } from "../../contexts/TodoContext";
 
 const TodoInputContainer = () => {
@@ -21,10 +21,13 @@ const TodoInputContainer = () => {
   };
 
   return (
-    <form onSubmit={handleCreateSubmit}>
+    <SignFormComponent props={{ fn: handleCreateSubmit }}>
       <InputComponent props={{ test_id: "new-todo-input" }} />
-      <BtnComponent props={{ test_id: "new-todo-add-button", name: "추가", type: "submit" }} />
-    </form>
+      <BtnComponent
+        props={{ test_id: "new-todo-add-button", name: "추가", type: "submit" }}
+        style={{ background_color: "#a1a3f7", width: "100%" }}
+      />
+    </SignFormComponent>
   );
 };
 
