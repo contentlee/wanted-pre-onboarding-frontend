@@ -22,4 +22,4 @@ $ yarn start
 
 ## Deployment
 
-https://contentlee.github.io/
+https://contentlee.github.io/wanted-pre-onboarding-frontend/
