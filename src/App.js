@@ -1,13 +1,12 @@
-import { useContext } from "react";
-
-import SignPage from "./pages/SignPage";
 import UserPage from "./pages/UserPage";
-import { SignInContext } from "./contexts/MainContext";
+import MainContext from "./contexts/MainContext";
 
 function App() {
-  const { signedIn } = useContext(SignInContext);
-
-  return signedIn ? <UserPage /> : <SignPage />;
+  return (
+    <MainContext>
+      <UserPage />
+    </MainContext>
+  );
 }
 
 export default App;
